@@ -26,35 +26,40 @@ const Card = () => {
   ];
 
   return (
-    <div className="w-full h-screen flex items-center justify-center gap-10 bg-zinc-200">
-      {data.map((elem, index) => {
-        return (
-          <div
-            key={index}
-            className="w-52 bg-zinc-100 rounded-lg overflow-hidden"
-          >
-            <div className="w-full h-32 bg-zinc-300 ">
-              <img
-                className="w-full h-full object-cover"
-                src={elem.image}
-                alt="Amazon Box"
-              />
+    <>
+      <h1 className="w-full h-20 bg-zinc-400 flex items-center text-zinc-700 pl-12 font-bold">
+        Dynamic Conditonal Rendering Cards
+      </h1>
+      <div className="w-full h-200 p-10 flex items-center justify-center gap-10 bg-zinc-200">
+        {data.map((elem, index) => {
+          return (
+            <div
+              key={index}
+              className="w-52 bg-zinc-100 rounded-lg overflow-hidden"
+            >
+              <div className="w-full h-32 bg-zinc-300 ">
+                <img
+                  className="w-full h-full object-cover"
+                  src={elem.image}
+                  alt="Amazon Box"
+                />
+              </div>
+              <div className="w-full px-3 py-4">
+                <h2 className="font-semibold">{elem.title}</h2>
+                <p className="text-xs mt-3">{elem.desc}</p>
+                <button
+                  className={`px-2 cursor-pointer py-1 mt-3 text-white rounded-lg ${
+                    elem.inStock ? "bg-red-400" : "bg-gray-400"
+                  }`}
+                >
+                  {elem.inStock ? "Buy Now!" : "Know More!"}
+                </button>
+              </div>
             </div>
-            <div className="w-full px-3 py-4">
-              <h2 className="font-semibold">{elem.title}</h2>
-              <p className="text-xs mt-3">{elem.desc}</p>
-              <button
-                className={`px-2 cursor-pointer py-1 mt-3 text-white rounded-lg ${
-                  elem.inStock ? "bg-red-400" : "bg-gray-400"
-                }`}
-              >
-                {elem.inStock ? "Buy Now!" : "Know More!"}
-              </button>
-            </div>
-          </div>
-        );
-      })}
-    </div>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
