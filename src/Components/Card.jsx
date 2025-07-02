@@ -26,7 +26,7 @@ const Card = () => {
   ];
 
   return (
-    <>
+    <div className="w-full h-screen">
       <h1 className="w-full h-20 bg-zinc-400 flex items-center text-zinc-700 pl-12 font-bold">
         Dynamic Conditonal Rendering Cards
       </h1>
@@ -59,7 +59,7 @@ const Card = () => {
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 
