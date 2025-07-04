@@ -2,14 +2,14 @@ import React from "react";
 import "./index.css";
 import Card from "./Components/Card";
 import MusicCard from "./Components/MusicCard";
-import UseStatePractice from "./Components/UseStatePractice";
+import ImageSlider from "./Components/ImageSlider";
 
 function App() {
   return (
     <>
       <Card />
       <MusicCard />
-      <UseStatePractice />
+      <ImageSlider />
     </>
   );
 }
